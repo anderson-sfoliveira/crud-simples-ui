@@ -7,17 +7,17 @@
           <h1>{{ editando ? 'Editar' : 'Novo' }} Cliente</h1>
         </div>
 
-        <div class="p-col-12">
-            <p-selectButton [options]="tipos" #tipo name="tipo" [(ngModel)]="cliente.tipo"></p-selectButton>
-        </div>
-
         <div class="p-col-12 p-md-9 p-fluid">
           <label>Nome</label>
           <input pInputText type="text" name="nome" [(ngModel)]="cliente.nome" #nome="ngModel" required>
           <app-message [control]="nome.control" error="required" text="Campo obrigatório"></app-message>
         </div>
 
-        <div class="p-col-12 p-fluid">
+        <div class="p-col-12">
+          <p-selectButton [options]="tipos" #tipo name="tipo" [(ngModel)]="cliente.tipo"></p-selectButton>
+      </div>
+
+      <div class="p-col-12 p-fluid">
           <label>{{ tipo.value === 'PF' ? 'CPF' : 'CNPJ' }}</label>
           <p-inputMask name="cpfCnpj" [(ngModel)]="cliente.cpfCnpj" #cpfCnpj="ngModel" [required]="true" [mask]="tipo.value === 'PJ' ? '99.999.999/9999-99' : '999.999.999-99'"></p-inputMask>
           <!-- <input pInputText type="text" name="cpfCnpj" [(ngModel)]="cliente.cpfCnpj" #cpfCnpj="ngModel" required> -->
