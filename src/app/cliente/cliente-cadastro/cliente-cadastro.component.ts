@@ -17,6 +17,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ClienteCadastroComponent implements OnInit {
 
   cliente = new Cliente();
+  cpfCnpj = '';
   @ViewChild('tabela') grid!: any;
 
   tipos = [
@@ -51,8 +52,12 @@ export class ClienteCadastroComponent implements OnInit {
   carregarCliente(codigo: number) {
     this.clienteService.buscarPorCodigo(codigo)
       .then((cliente:Cliente) => {
+        if (cliente.cpfCnpj != null) {this.cpfCnpj = cliente.cpfCnpj;}
         this.cliente = cliente;
         this.atualizarTituloEdicao();
+        setTimeout(() => {
+          this.cliente.cpfCnpj = this.cpfCnpj;
+        }, 1);
       })
       .catch((erro:any) => this.errorHandler.handle(erro));
   }

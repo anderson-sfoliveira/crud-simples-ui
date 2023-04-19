@@ -19,8 +19,8 @@
 
         <div class="p-col-12 p-fluid">
           <label>{{ tipo.value === 'PF' ? 'CPF' : 'CNPJ' }}</label>
-          <!-- <p-inputMask name="cpfCnpj" [mask]="tipo.value === 'PJ' ? '99.999.999/9999-99' : '999.999.999-99'" [(ngModel)]="cliente.cpfCnpj" #cpfCnpj="ngModel" [required]="true"></p-inputMask> -->
-          <input pInputText type="text" name="cpfCnpj" [(ngModel)]="cliente.cpfCnpj" #cpfCnpj="ngModel" required>
+          <p-inputMask name="cpfCnpj" [(ngModel)]="cliente.cpfCnpj" #cpfCnpj="ngModel" [required]="true" [mask]="tipo.value === 'PJ' ? '99.999.999/9999-99' : '999.999.999-99'"></p-inputMask>
+          <!-- <input pInputText type="text" name="cpfCnpj" [(ngModel)]="cliente.cpfCnpj" #cpfCnpj="ngModel" required> -->
           <app-message [control]="cpfCnpj.control" error="required" text="Campo obrigatório"></app-message>
         </div>
 
