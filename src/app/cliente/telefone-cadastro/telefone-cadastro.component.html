@@ -1,23 +1,20 @@
 <div class="container">
-    <form #clienteForm="ngForm" autocomplete="off" (ngSubmit)="salvar(clienteForm)">
-
-      <div class="p-grid">
-        <div class="p-col-12">
-          <h1>Novo telefone</h1>
-        </div>
-
-        <div class="p-col-12 p-fluid">
-          <label>Telefone</label>
-          <p-inputMask name="numero" mask="(99) 99999-9999" [(ngModel)]="telefone.numero" #numero="ngModel" [required]="true"></p-inputMask>
-          <app-message [control]="numero.control" error="required" text="Informe o telefone"></app-message>
-        </div>
-
-        <div class="p-col-12">
-          <button pButton type="submit" label="Salvar"></button>
-          <a [routerLink]="['/clientes', this.idCliente, 'editar']">Voltar para a pesquisa</a>
-        </div>
+  <form #clienteForm="ngForm" autocomplete="off" (ngSubmit)="salvar(clienteForm)">
+    <div class="p-grid">
+      <div class="p-col-12">
+        <h1>Novo telefone</h1>
       </div>
 
-    </form>
+      <div class="p-col-12 p-fluid">
+        <label>Telefone</label>
+        <p-inputMask name="numero" mask="(99) 99999-9999" [(ngModel)]="telefone.numero" #numero="ngModel" [required]="true"></p-inputMask>
+        <app-message [control]="numero.control" error="required" text="Informe o telefone"></app-message>
+      </div>
 
-  </div>
+      <div class="p-col-12 cadastro-acoes">
+        <button pButton type="submit" label="Salvar"></button>
+        <a [routerLink]="['/clientes', this.idCliente, 'editar']">Voltar para o cadastro do cliente</a>
+      </div>
+    </div>
+  </form>
+</div>
