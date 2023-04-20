@@ -16,8 +16,12 @@ label {
   }
 }
 
+.cadastro-acoes {
+  padding: 8px;
+}
+
 .cadastro-acoes .p-button {
-  margin-right: 5px;
+  margin: 15px 15px 0 0;
 }
 
 button.p-button {
@@ -30,7 +34,7 @@ button.p-button {
   opacity: 0.5;
 } */
 
-.lista-telefones > a {
+.cadastro-acoes > a {
   text-decoration: none;
 }
 
