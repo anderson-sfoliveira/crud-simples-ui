@@ -16,10 +16,6 @@ label {
   }
 }
 
-.cadastro-acoes {
-  padding: 8px;
-}
-
 .cadastro-acoes .p-button {
   margin: 15px 15px 0 0;
 }
@@ -35,4 +31,21 @@ button.p-button {
 .lista-telefones--oculta {
   display: none;
   visibility: hidden;
+}
+
+.cadastro-telefone__numero {
+  max-width: 350px;
+}
+
+.cadastro-campo {
+  margin-bottom: 15px;
+}
+
+.col-acoes {
+  width: 150px;
+  text-align: center;
+}
+
+.pesquisa-cliente {
+  margin: 15px 0 30px 0;
 }
